@@ -8,9 +8,9 @@ library(tidyverse)
 library(vegan)
 
 #Loading files assembled in code Mycocosm_data.R
-geneFreq_dat_wFunct <- read.csv("geneFreq_dat_ForLudo.csv", header = T, stringsAsFactors = F)# Species x gene frequency table
-funct_groups <- read.csv("funct_groups_ForLudo.csv", header = T, stringsAsFactors = F)#Functional group info associated to a given species
-taxonomy <- read.csv("taxonomy_ForLudo.csv", header = T, stringsAsFactors = F)# Standardized taxonomy for each species
+geneFreq_dat_wFunct <- read.csv("gene_freq.csv", header = T, stringsAsFactors = F)# Species x gene frequency table
+funct_groups <- read.csv("funct_groups.csv", header = T, stringsAsFactors = F)#Functional group info associated to a given species
+taxonomy <- read.csv("taxonomy.csv", header = T, stringsAsFactors = F)# Standardized taxonomy for each species
 gene_descriptions <- readRDS("gene_descriptions.RDS")#Functional description associated to each 
 
 #1.For some reason there are 350 gene families for which all entries are 0
