@@ -13,6 +13,11 @@ funct_groups <- read.csv("funct_groups.csv", header = T, stringsAsFactors = F)#F
 taxonomy <- read.csv("taxonomy.csv", header = T, stringsAsFactors = F)# Standardized taxonomy for each species
 gene_descriptions <- readRDS("gene_descriptions.RDS")#Functional description associated to each 
 
+# Note, one could also replace the PF family names for their descriptions since they are in 
+# consecutive order. That is:
+
+all(names(geneFreq_dat_wFunct[, c(6:8294)]) == gene_descriptions$family[1:8289]) # That is TRUE
+
 #1.For some reason there are 350 gene families for which all entries are 0
 c0 <- sapply(geneFreq_dat_wFunct[, -c(1:5)], function(x){all(x == 0)})
 length(which(c0 ==T))
